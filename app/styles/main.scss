@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -9,24 +10,24 @@ body {
   background: linear-gradient(135deg, rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
   background-size: 600% 600%;
 
-  -webkit-animation: background-gradient 16s ease infinite;
-  -moz-animation: background-gradient 16s ease infinite;
-  animation: background-gradient 16s ease infinite;
+  -webkit-animation: background-gradient 1s ease infinite;
+  -moz-animation: background-gradient 1s ease infinite;
+  animation: background-gradient 1s ease infinite;
 
   @-webkit-keyframes background-gradient {
-      0%{background-position:18% 0%}
-      50%{background-position:83% 100%}
-      100%{background-position:18% 0%}
+      0% { background-position: 18% 0% }
+      50% { background-position: 83% 100% }
+      100% { background-position: 18% 0% }
   }
   @-moz-keyframes background-gradient {
-      0%{background-position:18% 0%}
-      50%{background-position:83% 100%}
-      100%{background-position:18% 0%}
+      0% { background-position: 18% 0% }
+      50% { background-position: 83% 100% }
+      100% { background-position: 18% 0% }
   }
   @keyframes background-gradient {
-      0%{background-position:18% 0%}
-      50%{background-position:83% 100%}
-      100%{background-position:18% 0%}
+      0% { background-position: 18% 0% }
+      50% { background-position: 83% 100% }
+      100% { background-position: 18% 0% }
   }
 }
 
