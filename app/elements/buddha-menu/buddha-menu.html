@@ -1,0 +1,83 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<!-- <link rel="import" href="../buddha-menu-items/buddha-menu-items.html"> -->
+
+<polymer-element name="buddha-menu" attributes="">
+  <template>
+    <link rel="stylesheet" href="buddha-menu.css">
+    <div class="menu-back">
+      <template repeat="{{item in menuItems}}">
+        <!-- <buddha-menu-items data="{{item}}"></buddha-menu-items> -->
+        <h2>{{item.title}}</h2>
+        <div class="menu-items">
+          <template repeat="{{value in item.values}}">
+            <div value="{{value}}" type="{{item.type}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none"></div>
+          </template>
+        </div>
+      </template>
+    </div>
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        publish: {
+          show: {
+            value: false,
+            reflect: true
+          },
+          color: '',
+          sound: ''
+        },
+        created: function () {
+          this.menuItems = [
+          { title: 'Machine Color',
+            shape: 'square',
+            type: 'color',
+            values: [
+              '00aaff',
+              '00ffaa',
+              'aaff00',
+              'aa00ff',
+              'ffaa00',
+              'ff00aa',
+              'ffffff',
+              '000000' ]},
+          { title: 'Machine Sound',
+            shape: 'circle',
+            type: 'sound',
+            values: [
+              'https://s3.amazonaws.com/buddhamachine/version1/0.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/1.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/2.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/3.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/4.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/5.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/6.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/7.mp3',
+              'https://s3.amazonaws.com/buddhamachine/version1/8.mp3' ]}
+          ]
+        },
+        showChanged: function (oldShow, newShow) {
+          if(newShow) {
+            console.log('show menu');
+          } else {
+            console.log('hide menu');
+          }
+        },
+        tapHandler: function (event, detail, sender) {
+          var attr = sender.attributes;
+          var val = attr.getNamedItem('value').value;
+          var type = attr.getNamedItem('type').value;
+          console.log(type, val);
+          if(type === 'color') {
+            this.color = val;
+          } else if(type === 'sound') {
+            this.sound = val;
+          }
+        }
+      });
+
+    })();
+  </script>
+</polymer-element>

@@ -1,0 +1,110 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="buddha-speaker">
+  <template>
+    <link rel="stylesheet" href="buddha-speaker.css">
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        publish: {
+          playing: false,
+          sound: '',
+          color: {
+            value: '',
+            reflect: true
+          }
+        },
+        created: function () {
+          this.context = null;
+          this.source = null;
+          this.genuinelyPlaying = false;
+        },
+        playingChanged: function (oldValue, newValue) {
+          if(newValue) {
+            this.play();
+          } else {
+            this.stop();
+          }
+        },
+        soundChanged: function (oldValue, newValue) {
+          if(this.playing) {
+            this.stop();
+            this.play();
+          }
+        },
+        getContext: function () {
+          this.context = (this.context) ? this.context : this.setAudioContext();
+          return this.context;
+        },
+        getSource: function () {
+          this.source = (this.source) ? this.source : this.createNewSource();
+          return this.source;
+        },
+        createNewSource: function () {
+          var context = this.getContext();
+          return context.createBufferSource();
+        },
+        removeSource: function () {
+          this.source = null;
+        },
+        play: function () {
+          this.getSoundFile(this.sound);
+          console.log('playing');
+        },
+        stop: function () {
+          if(this.genuinelyPlaying) {
+            var source = this.getSource();
+            source.stop();
+            this.genuinelyPlaying = false;
+            this.removeSource();
+            console.log('stopping');
+          }
+        },
+        playSound: function (soundFile, context) {
+          if(!this.genuinelyPlaying) {
+            var source = this.getSource();
+            source.buffer = soundFile;
+            source.connect(context.destination);
+            source.loop = true;
+            source.start();
+            this.genuinelyPlaying = true;
+          }
+        },
+        getSoundFile: function (soundFile) {
+          var soundBuffer = null;
+          var request = new XMLHttpRequest();
+
+          console.log(soundFile);
+          var context = this.getContext();
+
+          var onError = function (error) {
+            console.log(error);
+          };
+
+          request.open('GET', soundFile, true);
+          request.responseType = 'arraybuffer';
+          var that = this;
+          request.onload = function () {
+            context.decodeAudioData(request.response, function (buffer) {
+              that.playSound(buffer, context);
+            }, onError);
+          };
+          request.send();
+        },
+        setAudioContext: function () {
+          try {
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
+            return new AudioContext();
+          } catch (e) {
+            console.log('No Web Audio API support.');
+            return {};
+          }
+        }
+      });
+
+    })();
+  </script>
+</polymer-element>

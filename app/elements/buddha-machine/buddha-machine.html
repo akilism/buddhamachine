@@ -1,0 +1,53 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../buddha-speaker/buddha-speaker.html">
+<link rel="import" href="../buddha-menu/buddha-menu.html">
+
+<polymer-element name="buddha-machine">
+  <template>
+    <link rel="stylesheet" href="buddha-machine.css">
+    <div class="machine-back" on-colorchange="{{changeColor}}" on-tap="{{menuHandler}}" touch-action="none">
+      <buddha-speaker
+        color="{{color}}"
+        sound="{{sound}}"
+        playing="{{playing}}"
+        on-tap="{{playHandler}}"
+        touch-action="none">
+      </buddha-speaker>
+    </div>
+    <buddha-menu show="{{showMenu}}" color="{{color}}" sound="{{sound}}"></buddha-menu>
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        publish: {
+          showMenu: {
+            value: false,
+            reflect: true
+          },
+          sound: 'https://s3.amazonaws.com/buddhamachine/version1/0.mp3',
+          color: {
+            value: '',
+            reflect: true
+          }
+        },
+        created: function () {
+        },
+        playHandler: function (event, detail, sender) {
+          this.playing = !this.playing;
+          event.stopPropagation();
+          event.preventDefault();
+        },
+        menuHandler: function (event, detail, sender) {
+          this.showMenu = !this.showMenu;
+        },
+        changeColor: function (event) {
+          console.log(event);
+          this.color = event.detail;
+        }
+      });
+
+    })();
+  </script>
+</polymer-element>

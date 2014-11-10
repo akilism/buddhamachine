@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  position: relative;
+  margin: 20px;
+}
+
+:host([showMenu]) {
+  .machine-back {
+    border-radius: 5px 0 0 5px;
+    box-shadow: none;
+  }
+}
+
+.machine-back {
+  display: block;
+  position: relative;
+  background-color: #00aaff;
+  border-radius: 5px;
+  width: 225px;
+  left: -1px;
+  height: 400px;
+  z-index: 2;
+  box-shadow: 0 5px 10px 2px rgba(0,0,0,0.5);
+  transition: box-shadow 300ms ease,
+    border-radius 400ms ease;
+}
+
+:host([color="00aaff"]) {
+  .machine-back {
+    background-color: #00aaff;
+  }
+}
+
+:host([color="00ffaa"]) {
+  .machine-back {
+    background-color: #00ffaa;
+  }
+}
+
+:host([color="aaff00"]) {
+  .machine-back {
+    background-color: #aaff00;
+  }
+}
+
+:host([color="aa00ff"]) {
+  .machine-back {
+    background-color: #aa00ff;
+  }
+}
+
+:host([color="ffaa00"]) {
+  .machine-back {
+    background-color: #ffaa00;
+  }
+}
+
+:host([color="ff00aa"]) {
+  .machine-back {
+    background-color: #ff00aa;
+  }
+}
+
+:host([color="000000"]) {
+  .machine-back {
+    background-color: #000000;
+  }
+}
+
+:host([color="ffffff"]) {
+  .machine-back {
+    background-color: #ffffff;
+  }
+}

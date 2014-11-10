@@ -1,0 +1,98 @@
+:host {
+  display: block;
+
+  h2 {
+    white-space: nowrap;
+    border-bottom: 1px solid #dfdfdf;
+    // border-width: 0 0 1px 0;
+    margin-bottom: 0;
+    width: 75%
+  }
+}
+
+:host([show]) {
+  .menu-back {
+    width: 370px;
+    padding-left: 250px;
+    box-shadow: 0 5px 10px 2px rgba(0,0,0,0.5);
+    transition: width 500ms ease-out,
+      box-shadow 300ms ease,
+      padding 300ms ease-out;
+  }
+}
+
+.menu-back {
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    border-radius: 5px 3px 3px 5px;
+    z-index: 1;
+    width: 0;
+    box-shadow: none;
+    transition: width 500ms ease-in,
+      box-shadow 300ms ease,
+      padding 600ms ease-in;
+    overflow: hidden;
+    padding-left: 224px;
+}
+
+
+
+.menu-items {
+  width: 270px;
+  margin-left: -5px;
+  overflow: hidden;
+}
+
+.menu-item {
+  height: 40px;
+  width: 40px;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.25);
+  display: inline-block;
+  margin: 10px 5px;
+  transition: all 50ms ease;
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 10px -1px rgba(0,0,0,0.5);
+    // height: 45px;
+    // width: 45px;
+  }
+
+  &[value="00aaff"] {
+    background-color: #00aaff;
+  }
+
+  &[value="00ffaa"] {
+    background-color: #00ffaa;
+  }
+
+  &[value="aa00ff"] {
+    background-color: #aa00ff;
+  }
+
+  &[value="aaff00"] {
+    background-color: #aaff00;
+  }
+
+  &[value="ff00aa"] {
+    background-color: #ff00aa;
+  }
+
+  &[value="ffaa00"] {
+    background-color: #ffaa00;
+  }
+
+  &[value="ffffff"] {
+    background-color: #ffffff;
+  }
+
+  &[value="000000"] {
+    background-color: #000000;
+  }
+}

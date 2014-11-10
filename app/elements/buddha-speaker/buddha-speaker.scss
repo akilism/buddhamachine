@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  position: relative;
+  box-shadow: 2px 2px 2px darken(#00aaff, 10%),
+  -5px -4px 0px -3px lighten(#00aaff, 10%);
+  top: 5%;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-image: url("/images/speaker.svg");
+  background-repeat: no-repeat;
+  background-size: 98%;
+  background-position: center;
+}
+
+
+:host([color="00aaff"]) {
+  box-shadow: 2px 2px 2px darken(#00aaff, 10%),
+  -5px -4px 0px -3px lighten(#00aaff, 10%);
+}
+
+:host([color="00ffaa"]) {
+  box-shadow: 2px 2px 2px darken(#00ffaa, 10%),
+  -5px -4px 0px -3px lighten(#00ffaa, 10%);
+}
+
+:host([color="aaff00"]) {
+  box-shadow: 2px 2px 2px darken(#aaff00, 10%),
+  -5px -4px 0px -3px lighten(#aaff00, 10%);
+}
+
+:host([color="aa00ff"]) {
+  box-shadow: 2px 2px 2px darken(#aa00ff, 10%),
+  -5px -4px 0px -3px lighten(#aa00ff, 10%);
+}
+
+:host([color="ffaa00"]) {
+  box-shadow: 2px 2px 2px darken(#ffaa00, 10%),
+  -5px -4px 0px -3px lighten(#ffaa00, 10%);
+}
+
+:host([color="ff00aa"]) {
+  box-shadow: 2px 2px 2px darken(#ff00aa, 10%),
+  -5px -4px 0px -3px lighten(#ff00aa, 10%);
+}
+
+:host([color="000000"]) {
+  box-shadow: 2px 2px 2px darken(#000000, 10%),
+  -5px -4px 0px -3px lighten(#000000, 10%);
+}
+
+:host([color="ffffff"]) {
+  box-shadow: 2px 2px 2px darken(#ffffff, 10%),
+  -5px -4px 0px -3px lighten(#ffffff, 10%);
+}
