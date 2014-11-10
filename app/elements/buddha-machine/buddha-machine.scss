@@ -1,5 +1,25 @@
+$color0: #09fff8;
+$color1: #410ce8;
+$color2: #e89e0c;
+$color3: #85ff0d;
+$color4: #eaffa5;
+$color5: #9ae8d3;
+$color6: #9d9cff;
+$color7: #e89aba;
+$color8: #ffdba9;
+
+$val0: "09fff8";
+$val1: "410ce8";
+$val2: "e89e0c";
+$val3: "85ff0d";
+$val4: "eaffa5";
+$val5: "9ae8d3";
+$val6: "9d9cff";
+$val7: "e89aba";
+$val8: "ffdba9";
+
 :host {
-  display: block;
+  display: inline-block;
   position: relative;
   margin: 20px;
 }
@@ -8,6 +28,11 @@
   .machine-back {
     border-radius: 5px 0 0 5px;
     box-shadow: none;
+    z-index: 11;
+    margin-right: 320px;
+    transition: box-shadow 300ms ease,
+      border-radius 400ms ease,
+      margin-right 500ms ease-out;
   }
 }
 
@@ -20,55 +45,82 @@
   left: -1px;
   height: 400px;
   z-index: 2;
+  margin-right: 0;
   box-shadow: 0 5px 10px 2px rgba(0,0,0,0.5);
   transition: box-shadow 300ms ease,
-    border-radius 400ms ease;
+    border-radius 400ms ease,
+    margin-right 500ms ease-in;
 }
 
-:host([color="00aaff"]) {
+:host([color="#{$val0}"]) {
   .machine-back {
-    background-color: #00aaff;
+    background-color: $color0;
   }
 }
 
-:host([color="00ffaa"]) {
+:host([color="#{$val1}"]) {
   .machine-back {
-    background-color: #00ffaa;
+    background-color: $color1;
   }
 }
 
-:host([color="aaff00"]) {
+:host([color="#{$val2}"]) {
   .machine-back {
-    background-color: #aaff00;
+    background-color: $color2;
+  }
+}
+:host([color="#{$val3}"]) {
+  .machine-back {
+    background-color: $color3;
+  }
+}
+:host([color="#{$val4}"]) {
+  .machine-back {
+    background-color: $color4;
+  }
+}
+:host([color="#{$val5}"]) {
+  .machine-back {
+    background-color: $color5;
+  }
+}
+:host([color="#{$val6}"]) {
+  .machine-back {
+    background-color: $color6;
+  }
+}
+:host([color="#{$val7}"]) {
+  .machine-back {
+    background-color: $color7;
+  }
+}
+:host([color="#{$val8}"]) {
+  .machine-back {
+    background-color: $color8;
   }
 }
 
-:host([color="aa00ff"]) {
-  .machine-back {
-    background-color: #aa00ff;
+:host([playing]) {
+  .playing-indicator {
+    .on {
+      display: inline-block;
+    }
+
+    .off {
+      display: none;
+    }
   }
 }
 
-:host([color="ffaa00"]) {
-  .machine-back {
-    background-color: #ffaa00;
-  }
-}
+.playing-indicator {
+  padding: 10px;
 
-:host([color="ff00aa"]) {
-  .machine-back {
-    background-color: #ff00aa;
+  .on {
+    display: none;
   }
-}
 
-:host([color="000000"]) {
-  .machine-back {
-    background-color: #000000;
-  }
-}
-
-:host([color="ffffff"]) {
-  .machine-back {
-    background-color: #ffffff;
+  .off {
+    display: inline-block;
+    opacity: 0.3;
   }
 }

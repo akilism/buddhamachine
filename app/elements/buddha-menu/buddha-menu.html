@@ -1,5 +1,4 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<!-- <link rel="import" href="../buddha-menu-items/buddha-menu-items.html"> -->
 
 <polymer-element name="buddha-menu" attributes="">
   <template>
@@ -9,8 +8,8 @@
         <!-- <buddha-menu-items data="{{item}}"></buddha-menu-items> -->
         <h2>{{item.title}}</h2>
         <div class="menu-items">
-          <template repeat="{{value in item.values}}">
-            <div value="{{value}}" type="{{item.type}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none"></div>
+          <template repeat="{{value, idx in item.values}}">
+            <div value="{{value}}" type="{{item.type}}" active="{{sound == value}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none">{{idx}}</div>
           </template>
         </div>
       </template>
@@ -35,14 +34,15 @@
             shape: 'square',
             type: 'color',
             values: [
-              '00aaff',
-              '00ffaa',
-              'aaff00',
-              'aa00ff',
-              'ffaa00',
-              'ff00aa',
-              'ffffff',
-              '000000' ]},
+              '09fff8',
+              '410ce8',
+              'e89e0c',
+              '85ff0d',
+              'eaffa5',
+              '9ae8d3',
+              '9d9cff',
+              'e89aba',
+              'ffdba9' ]},
           { title: 'Machine Sound',
             shape: 'circle',
             type: 'sound',

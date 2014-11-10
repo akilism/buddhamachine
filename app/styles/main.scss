@@ -1,11 +1,12 @@
 html, body {
   height: 100%;
   margin: 0;
+  min-width: 620px;
 }
 
 body {
   background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background: linear-gradient(135deg, rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
   background-size: 600% 600%;

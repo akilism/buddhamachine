@@ -1,3 +1,23 @@
+$color0: #09fff8;
+$color1: #410ce8;
+$color2: #e89e0c;
+$color3: #85ff0d;
+$color4: #eaffa5;
+$color5: #9ae8d3;
+$color6: #9d9cff;
+$color7: #e89aba;
+$color8: #ffdba9;
+
+$val0: "09fff8";
+$val1: "410ce8";
+$val2: "e89e0c";
+$val3: "85ff0d";
+$val4: "eaffa5";
+$val5: "9ae8d3";
+$val6: "9d9cff";
+$val7: "e89aba";
+$val8: "ffdba9";
+
 :host {
   display: block;
 
@@ -12,12 +32,13 @@
 
 :host([show]) {
   .menu-back {
-    width: 370px;
+    width: 310px;
     padding-left: 250px;
     box-shadow: 0 5px 10px 2px rgba(0,0,0,0.5);
     transition: width 500ms ease-out,
       box-shadow 300ms ease,
       padding 300ms ease-out;
+    z-index: 10;
   }
 }
 
@@ -34,7 +55,7 @@
       box-shadow 300ms ease,
       padding 600ms ease-in;
     overflow: hidden;
-    padding-left: 224px;
+    padding-left: 223px;
 }
 
 
@@ -53,6 +74,9 @@
   display: inline-block;
   margin: 10px 5px;
   transition: all 50ms ease;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
 
   &.circle {
     border-radius: 50%;
@@ -60,39 +84,53 @@
 
   &:hover {
     box-shadow: 0 5px 10px -1px rgba(0,0,0,0.5);
+    background: #ccff00;
     // height: 45px;
     // width: 45px;
   }
 
-  &[value="00aaff"] {
-    background-color: #00aaff;
+  &[value="#{$val0}"] {
+    background-color: $color0;
+    color: $color0;
   }
 
-  &[value="00ffaa"] {
-    background-color: #00ffaa;
+  &[value="#{$val1}"] {
+    background-color: $color1;
+    color: $color1;
   }
 
-  &[value="aa00ff"] {
-    background-color: #aa00ff;
+  &[value="#{$val2}"] {
+    background-color: $color2;
+    color: $color2;
   }
 
-  &[value="aaff00"] {
-    background-color: #aaff00;
+  &[value="#{$val3}"] {
+    background-color: $color3;
+    color: $color3;
   }
 
-  &[value="ff00aa"] {
-    background-color: #ff00aa;
+  &[value="#{$val4}"] {
+    background-color: $color4;
+    color: $color4;
   }
 
-  &[value="ffaa00"] {
-    background-color: #ffaa00;
+  &[value="#{$val5}"] {
+    background-color: $color5;
+    color: $color5;
   }
 
-  &[value="ffffff"] {
-    background-color: #ffffff;
+  &[value="#{$val6}"] {
+    background-color: $color6;
+    color: $color6;
   }
 
-  &[value="000000"] {
-    background-color: #000000;
+  &[value="#{$val7}"] {
+    background-color: $color7;
+    color: $color7;
+  }
+
+  &[value="#{$val8}"] {
+    background-color: $color8;
+    color: $color8;
   }
 }

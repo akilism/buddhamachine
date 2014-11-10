@@ -5,7 +5,12 @@
 <polymer-element name="buddha-machine">
   <template>
     <link rel="stylesheet" href="buddha-machine.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="machine-back" on-colorchange="{{changeColor}}" on-tap="{{menuHandler}}" touch-action="none">
+      <div class="playing-indicator">
+        <i class="fa fa-volume-off off"></i>
+        <i class="fa fa-volume-up on"></i>
+      </div>
       <buddha-speaker
         color="{{color}}"
         sound="{{sound}}"
@@ -26,11 +31,15 @@
             value: false,
             reflect: true
           },
-          sound: 'https://s3.amazonaws.com/buddhamachine/version1/0.mp3',
+          playing: {
+            value: false,
+            reflect: true
+          },
           color: {
             value: '',
             reflect: true
-          }
+          },
+          sound: 'https://s3.amazonaws.com/buddhamachine/version1/0.mp3',
         },
         created: function () {
         },

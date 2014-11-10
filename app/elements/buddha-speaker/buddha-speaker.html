@@ -97,7 +97,8 @@
         setAudioContext: function () {
           try {
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
-            return new AudioContext();
+            window.audioctx = window.audioctx || new AudioContext();
+            return window.audioctx;
           } catch (e) {
             console.log('No Web Audio API support.');
             return {};
