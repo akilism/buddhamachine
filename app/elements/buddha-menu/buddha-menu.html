@@ -9,7 +9,7 @@
         <h2>{{item.title}}</h2>
         <div class="menu-items">
           <template repeat="{{value, idx in item.values}}">
-            <div value="{{value}}" type="{{item.type}}" active="{{sound == value}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none">{{idx}}</div>
+            <div value="{{value}}" type="{{item.type}}" active="{{sound == value}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none">{{idx + 1}}</div>
           </template>
         </div>
       </template>
