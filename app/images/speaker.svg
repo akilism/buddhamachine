@@ -1,13 +1,12 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
- <g>
-  <title>Speaker Grille</title>
-  <circle r="92" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 16" stroke-linecap="round" stroke="#000000" id="ring0"/>
-  <circle r="79" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 19" stroke-linecap="round" stroke="#000000" id="ring1"/>
-  <circle r="66" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 20" stroke-linecap="round" stroke="#000000" id="ring2"/>
-  <circle r="52" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 14" stroke-linecap="round" stroke="#000000" id="ring3"/>
-  <circle r="38" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 13" stroke-linecap="round" stroke="#000000" id="ring4"/>
-  <circle r="24" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 13" stroke-linecap="round" stroke="#000000" id="ring5"/>
-  <circle r="12" cy="100" cx="100" stroke-width="8" fill="#000000" fill-opacity="0" stroke-opacity="0.6" stroke-dasharray="1, 12" stroke-linecap="round" stroke="#000000" id="ring6"/>
-  <circle r="4"  cy="100" cx="100" stroke-width="0" fill="#000000" fill-opacity="0.6" stroke-opacity="0" id="center"/>
- </g>
+ <svg width="400px" height="400px" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <g>
+    <title>Speaker</title>
+    <circle r="180" cy="200" cx="200" stroke="#000000" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" fill-opacity="0" stroke-dasharray="1, 28" id="ring0"/>
+    <circle r="150" cy="200" cx="200" stroke="#000000" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" fill-opacity="0" stroke-dasharray="1, 26" id="ring1"/>
+    <circle r="120" cy="200" cx="200" stroke="#000000" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" fill-opacity="0" stroke-dasharray="1, 28" id="ring2"/>
+    <circle r="92"  cy="200" cx="200" stroke="#000000" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" fill-opacity="0" stroke-dasharray="1, 31" id="ring3"/>
+    <circle r="62"  cy="200" cx="200" stroke="#000000" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" fill-opacity="0" stroke-dasharray="1, 32" id="ring4"/>
+    <circle r="30"  cy="200" cx="200" stroke="#000000" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" fill-opacity="0" stroke-dasharray="1, 31" id="ring5"/>
+    <circle r="10"  cy="200" cx="200" stroke="#000000" stroke-opacity="0"    stroke-width="0"  stroke-linecap="round" fill-opacity="0.55" fill="#000000" id="center"/>
+  </g>
 </svg>

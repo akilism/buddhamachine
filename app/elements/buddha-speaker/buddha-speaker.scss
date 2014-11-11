@@ -1,17 +1,17 @@
-$color0: #09fff8;
-$color1: #410ce8;
-$color2: #e89e0c;
-$color3: #85ff0d;
+$color0: #caf81c;
+$color1: #fe6d2c;
+$color2: #4edc30;
+$color3: #fc0ccd;
+$val0: "caf81c";
+$val1: "fe6d2c";
+$val2: "4edc30";
+$val3: "fc0ccd";
+
 $color4: #eaffa5;
 $color5: #9ae8d3;
 $color6: #9d9cff;
 $color7: #e89aba;
 $color8: #ffdba9;
-
-$val0: "09fff8";
-$val1: "410ce8";
-$val2: "e89e0c";
-$val3: "85ff0d";
 $val4: "eaffa5";
 $val5: "9ae8d3";
 $val6: "9d9cff";
@@ -30,8 +30,8 @@ $val8: "ffdba9";
   margin: 0 auto;
   background-image: url("/images/speaker.svg");
   background-repeat: no-repeat;
-  background-size: 98%;
-  background-position: center;
+  // background-size: 98%;
+  // background-position: center;
 }
 
 :host([color="#{$val0}"]) {
