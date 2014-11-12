@@ -21,7 +21,7 @@ $val8: "ffdba9";
 :host {
   display: inline-block;
   position: relative;
-  margin: 20px;
+  margin: 10px;
 }
 
 :host([showMenu]) {
@@ -29,7 +29,7 @@ $val8: "ffdba9";
     border-radius: 5px 0 0 5px;
     box-shadow: none;
     z-index: 11;
-    margin-right: 320px;
+    margin-right: 310px;
     transition: box-shadow 300ms ease,
       border-radius 400ms ease,
       margin-right 500ms ease-out;
@@ -50,6 +50,7 @@ $val8: "ffdba9";
   transition: box-shadow 300ms ease,
     border-radius 400ms ease,
     margin-right 500ms ease-in;
+  cursor: pointer;
 }
 
 :host([color="#{$val0}"]) {

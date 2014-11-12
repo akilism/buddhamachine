@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../buddha-menu-item/buddha-menu-item.html">
 
 <polymer-element name="buddha-menu" attributes="">
   <template>
@@ -9,7 +10,14 @@
         <h2>{{item.title}}</h2>
         <div class="menu-items">
           <template repeat="{{value, idx in item.values}}">
-            <div value="{{value}}" type="{{item.type}}" active="{{sound == value}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none">{{idx + 1}}</div>
+            <!-- <div value="{{value}}" type="{{item.type}}" active="{{sound == value}}" class="{{item.shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none">{{idx + 1}}</div> -->
+            <buddha-menu-item
+              value="{{value}}"
+              type="{{item.type}}"
+              shape="{{item.shape}}"
+              color="{{color}}"
+              sound="{{sound}}">
+            </buddha-menu-item>
           </template>
         </div>
       </template>
@@ -30,7 +38,7 @@
         },
         created: function () {
           this.menuItems = [
-          { title: 'Machine Color',
+          { title: 'Color',
             shape: 'square',
             type: 'color',
             values: [
@@ -43,7 +51,7 @@
               '9d9cff',
               'e89aba',
               'ffdba9' ]},
-          { title: 'Machine Sound',
+          { title: 'Sound',
             shape: 'circle',
             type: 'sound',
             values: [
@@ -58,24 +66,32 @@
               'https://s3.amazonaws.com/buddhamachine/version1/8.mp3' ]}
           ]
         },
+        domReady: function () {
+          this.sound = this.getRandomSound();
+        },
+        getRandomSound: function () {
+          var index = Math.floor(Math.random() * this.menuItems[0].values.length);
+          return this.menuItems[1].values[index];
+        },
         showChanged: function (oldShow, newShow) {
           if(newShow) {
             console.log('show menu');
           } else {
             console.log('hide menu');
           }
-        },
-        tapHandler: function (event, detail, sender) {
-          var attr = sender.attributes;
-          var val = attr.getNamedItem('value').value;
-          var type = attr.getNamedItem('type').value;
-          console.log(type, val);
-          if(type === 'color') {
-            this.color = val;
-          } else if(type === 'sound') {
-            this.sound = val;
-          }
         }
+        // ,
+        // tapHandler: function (event, detail, sender) {
+        //   var attr = sender.attributes;
+        //   var val = attr.getNamedItem('value').value;
+        //   var type = attr.getNamedItem('type').value;
+        //   console.log(type, val);
+        //   if(type === 'color') {
+        //     this.color = val;
+        //   } else if(type === 'sound') {
+        //     this.sound = val;
+        //   }
+        // }
       });
 
     })();

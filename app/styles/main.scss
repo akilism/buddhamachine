@@ -9,7 +9,27 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background: linear-gradient(136deg, #35F50D, #1E7C0A);
-  background-size: 300% 300%;
+  background-size: 200% 200%;
+
+  // -webkit-animation: backgroundgrad 4s ease infinite;
+  // -moz-animation: backgroundgrad 4s ease infinite;
+  // animation: backgroundgrad 4s ease infinite;
+
+  // @-webkit-keyframes backgroundgrad {
+  //     0%{background-position:0% 2%}
+  //     50%{background-position:100% 99%}
+  //     100%{background-position:0% 2%}
+  // }
+  // @-moz-keyframes backgroundgrad {
+  //     0%{background-position:0% 2%}
+  //     50%{background-position:100% 99%}
+  //     100%{background-position:0% 2%}
+  // }
+  // @keyframes backgroundgrad {
+  //     0%{background-position:0% 2%}
+  //     50%{background-position:100% 99%}
+  //     100%{background-position:0% 2%}
+  // }
 }
 
 .browsehappy {

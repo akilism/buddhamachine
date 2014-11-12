@@ -1,0 +1,58 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="buddha-menu-item" attributes="">
+  <template>
+    <link rel="stylesheet" href="buddha-menu-item.css">
+    <div value="{{value}}" type="{{type}}" class="{{shape}} menu-item" on-tap="{{tapHandler}}" touch-action="none">{{display}}</div>
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        publish: {
+          color: '',
+          sound: '',
+          type: '',
+          value: '',
+          shape: '',
+          display: '',
+          active: {
+            value: false,
+            reflect: true
+          }
+        },
+        domReady: function () {
+          this.checkActive();
+        },
+        checkActive: function () {
+          if(this.type === 'sound' && this.sound === this.value) {
+            this.active = true;
+          } else if (this.type === 'color' && this.color === this.value) {
+            this.active = true;
+          } else {
+            this.active = false;
+          }
+        },
+        colorChanged: function (attrName, oldVal, newVal) {
+          this.checkActive();
+        },
+        soundChanged: function (attrName, oldVal, newVal) {
+          this.checkActive();
+        },
+        tapHandler: function (event, detail, sender) {
+          if(this.type === 'color') {
+            console.log(this.value);
+            this.color = this.value;
+          } else if(this.type === 'sound') {
+            console.log(this.value);
+            this.sound = this.value;
+          }
+
+          this.checkActive();
+        }
+      });
+
+    })();
+  </script>
+</polymer-element>

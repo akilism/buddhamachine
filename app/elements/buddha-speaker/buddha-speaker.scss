@@ -23,15 +23,14 @@ $val8: "ffdba9";
   position: relative;
   box-shadow: 2px 2px 2px darken(#00aaff, 10%),
   -5px -4px 0px -3px lighten(#00aaff, 10%);
-  // top: 5%;
   border-radius: 50%;
   width: 200px;
   height: 200px;
   margin: 0 auto;
   background-image: url("/images/speaker.svg");
   background-repeat: no-repeat;
-  // background-size: 98%;
-  // background-position: center;
+  cursor: pointer;
+
 }
 
 :host([color="#{$val0}"]) {
@@ -78,3 +77,8 @@ $val8: "ffdba9";
   box-shadow: 2px 2px 2px darken($color8, 10%),
   -5px -4px 0px -3px lighten($color8, 10%);
 }
+
+// :host(:hover) {
+//   box-shadow: 0 0 10px 10px #ffffff;
+//   transition: box-shadow 150ms ease;
+// }

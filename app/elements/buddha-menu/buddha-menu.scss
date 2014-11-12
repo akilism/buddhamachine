@@ -1,22 +1,4 @@
-$color0: #caf81c;
-$color1: #fe6d2c;
-$color2: #4edc30;
-$color3: #fc0ccd;
-$val0: "caf81c";
-$val1: "fe6d2c";
-$val2: "4edc30";
-$val3: "fc0ccd";
 
-$color4: #eaffa5;
-$color5: #9ae8d3;
-$color6: #9d9cff;
-$color7: #e89aba;
-$color8: #ffdba9;
-$val4: "eaffa5";
-$val5: "9ae8d3";
-$val6: "9d9cff";
-$val7: "e89aba";
-$val8: "ffdba9";
 
 :host {
   display: block;
@@ -32,8 +14,8 @@ $val8: "ffdba9";
 
 :host([show]) {
   .menu-back {
-    width: 310px;
-    padding-left: 250px;
+    width: 290px;
+    padding-left: 230px;
     box-shadow: 0 5px 10px 2px rgba(0,0,0,0.5);
     transition: width 500ms ease-out,
       box-shadow 300ms ease,
@@ -61,76 +43,8 @@ $val8: "ffdba9";
 
 
 .menu-items {
-  width: 270px;
-  margin-left: -5px;
-  overflow: hidden;
+  width: 290px;
+  // margin-left: -5px;
+  // overflow: hidden;
 }
 
-.menu-item {
-  height: 40px;
-  width: 40px;
-  border-radius: 3px;
-  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.25);
-  display: inline-block;
-  margin: 10px 5px;
-  transition: all 50ms ease;
-  text-align: center;
-  font-size: 1.9em;
-  cursor: pointer;
-
-  &.circle {
-    border-radius: 50%;
-  }
-
-  &:hover {
-    box-shadow: 0 5px 10px -1px rgba(0,0,0,0.5);
-    background: #ccff00;
-    // height: 45px;
-    // width: 45px;
-  }
-
-  &[value="#{$val0}"] {
-    background-color: $color0;
-    color: $color0;
-  }
-
-  &[value="#{$val1}"] {
-    background-color: $color1;
-    color: $color1;
-  }
-
-  &[value="#{$val2}"] {
-    background-color: $color2;
-    color: $color2;
-  }
-
-  &[value="#{$val3}"] {
-    background-color: $color3;
-    color: $color3;
-  }
-
-  &[value="#{$val4}"] {
-    background-color: $color4;
-    color: $color4;
-  }
-
-  &[value="#{$val5}"] {
-    background-color: $color5;
-    color: $color5;
-  }
-
-  &[value="#{$val6}"] {
-    background-color: $color6;
-    color: $color6;
-  }
-
-  &[value="#{$val7}"] {
-    background-color: $color7;
-    color: $color7;
-  }
-
-  &[value="#{$val8}"] {
-    background-color: $color8;
-    color: $color8;
-  }
-}
