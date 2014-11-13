@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../buddha-menu-item/buddha-menu-item.html">
 
-<polymer-element name="buddha-menu" attributes="">
+<polymer-element name="buddha-menu" attributes="" on-tap="{{menuHandler}}">
   <template>
     <link rel="stylesheet" href="buddha-menu.css">
     <div class="menu-back">
@@ -72,6 +72,9 @@
         getRandomSound: function () {
           var index = Math.floor(Math.random() * this.menuItems[0].values.length);
           return this.menuItems[1].values[index];
+        },
+        menuHandler: function (event, detail, sender) {
+          this.show = !this.show;
         },
         showChanged: function (oldShow, newShow) {
           if(newShow) {
