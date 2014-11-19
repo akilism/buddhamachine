@@ -24,13 +24,19 @@ $val8: "ffdba9";
   box-shadow: 2px 2px 2px darken(#00aaff, 10%),
   -5px -4px 0px -3px lighten(#00aaff, 10%);
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
   background-image: url("/images/speaker.svg");
   background-repeat: no-repeat;
+  background-position: -2px -2px;
   cursor: pointer;
 
+  @media only screen and (min-width : 768px) {
+    width: 200px;
+    height: 200px;
+    background-size: 134%;
+  }
 }
 
 :host([color="#{$val0}"]) {

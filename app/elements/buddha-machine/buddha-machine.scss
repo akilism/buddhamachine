@@ -21,7 +21,11 @@ $val8: "ffdba9";
 :host {
   display: inline-block;
   position: relative;
-  margin: 10px;
+  margin: 17px;
+
+  @media only screen and (min-width : 768px) {
+    margin: 10px;
+  }
 }
 
 :host([showMenu]) {
@@ -29,7 +33,6 @@ $val8: "ffdba9";
     border-radius: 5px 0 0 5px;
     box-shadow: none;
     z-index: 11;
-    // margin-right: 310px;
     transition: box-shadow 300ms ease,
       border-radius 400ms ease,
       margin-right 500ms ease-out;
@@ -41,9 +44,9 @@ $val8: "ffdba9";
   position: relative;
   background-color: #00aaff;
   border-radius: 5px;
-  width: 225px;
+  width: 330px;
+  height: 600px;
   left: -1px;
-  height: 400px;
   z-index: 2;
   margin-right: 0;
   box-shadow: 0 5px 10px 2px rgba(0,0,0,0.5);
@@ -51,6 +54,12 @@ $val8: "ffdba9";
     border-radius 400ms ease,
     margin-right 500ms ease-in;
   cursor: pointer;
+
+  @media only screen and (min-width : 768px) {
+    width: 225px;
+    height: 400px;
+  }
+
 }
 
 :host([color="#{$val0}"]) {

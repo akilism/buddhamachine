@@ -1,14 +1,19 @@
 html, body {
   height: 100%;
   margin: 0;
-  min-width: 620px;
+  width: 364px;
+
+  @media only screen and (min-width : 768px) {
+    width: 100%;
+  }
 }
 
 body {
   background: #fafafa;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
-  background: linear-gradient(136deg, #35F50D, #1E7C0A);
+  // background: linear-gradient(136deg, #35F50D, #1E7C0A);
+  background: #35f50d;
   // background-size: 400% 400%;
 
   // -webkit-animation: backgroundgrad 4s ease infinite;
